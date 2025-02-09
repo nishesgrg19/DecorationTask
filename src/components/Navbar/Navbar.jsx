@@ -141,7 +141,7 @@ const Navbar = () => {
             }
           }}
         >
-          <span className={styles.logoPrimary}>Elegancee</span>
+          <span className={styles.logoPrimary}>Elegance</span>
           <span className={styles.logoSecondary}>Events</span>
         </RouterLink>
         <button
