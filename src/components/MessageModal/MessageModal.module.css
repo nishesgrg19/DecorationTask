@@ -1,0 +1,70 @@
+/* Modal Styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .modalIcon {
+    margin-bottom: 1rem;
+  }
+  
+  .modalIcon.success {
+    color: #28a745;
+  }
+  
+  .modalIcon.error {
+    color: #dc3545;
+  }
+  
+  .modalTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+  }
+  
+  .modalMessage {
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  
+  .modalButton {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .modalButton:hover {
+    transform: translateY(-2px);
+  }
+  
+  .successButton {
+    background: #28a745;
+    color: white;
+  }
+  
+  .errorButton {
+    background: #dc3545;
+    color: white;
+  }

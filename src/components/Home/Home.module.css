@@ -1,0 +1,454 @@
+.homeContainer {
+  padding-top: 72px; /* Navbar height offset */
+}
+
+/* Hero Section */
+.heroSection {
+  min-height: calc(100vh - 72px);
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url('../../../public/assets/bg.jpg') center/cover no-repeat;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  color: var(--white);
+}
+
+.heroContent {
+  max-width: 1200px;
+  text-align: center;
+}
+
+.heroTitle {
+  color: white;
+  font-family: var(--font-title);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.heroSubtitle {
+  font-family: var(--font-secondary);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.heroCta {
+  cursor: pointer;
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: 
+    background-color var(--transition-normal),
+    transform var(--transition-fast);
+}
+
+.heroCta:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+/* Services Section */
+.servicesSection {
+  padding: var(--section-padding);
+  background-color: var(--white);
+}
+
+.sectionContainer {
+  width: var(--container-width);
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-family: var(--font-primary);
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.serviceCard {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal);
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+}
+
+.cardImage img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.cardContent {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.cardContent h3 {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+  color: var(--text-color);
+}
+
+.cardCta {
+  display: inline-block;
+  color: var(--primary-color);
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 3px solid var(--primary-color);
+  border-radius: 4px;
+  transition: 
+    background-color var(--transition-normal),
+    color var(--transition-normal);
+}
+
+.cardCta:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 1rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardImage img {
+    height: 220px;
+  }
+}
+
+/* Existing styles remain the same */
+
+.gallerySection {
+  padding: var(--section-padding);
+  background-color: var(--background-color);
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+  perspective: 1000px;
+}
+
+.galleryItem {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  color: white;
+}
+
+.imageOverlay span {
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: 
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.galleryItem:hover .imageOverlay span {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Add 3D tilt effect on mouse move */
+.galleryItem:hover img {
+  transform: scale(1.1) rotate(0.5deg);
+}
+
+/* Contact Section */
+.contactSection {
+  padding: var(--section-padding);
+  background-color: var(--white);
+}
+
+.contactContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Contact Form */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Form Group for input fields */
+.formGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Icons inside input fields */
+.inputIcon {
+  position: absolute;
+  left: 15px;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  top: 50%; /* Centered vertically for inputs */
+  transform: translateY(-50%);
+}
+
+/* Adjust input & textarea styles */
+.formGroup input {
+  width: 100%;
+  font-family: var(--font-primary);
+  padding: 1rem 1rem 1rem 3rem; /* Adjusted padding for icons */
+  border: 2px solid #eee;
+  border-radius: 6px;
+  transition: border-color var(--transition-fast);
+  font-size: 1rem;
+}
+
+/* Focus Effect */
+.formGroup input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Message Field */
+.messageGroup {
+  position: relative;
+  display: flex;
+}
+
+.messageIcon {
+  position: absolute;
+  top: 10px; /* Moves icon to the top */
+  left: 15px;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+/* Textarea Styling */
+.messageGroup textarea {
+  width: 100%;
+  font-family: var(--font-primary);
+  padding: 0.5rem 1rem 1rem 3rem; /* Top padding increased for icon */
+  border: 2px solid #eee;
+  border-radius: 6px;
+  transition: border-color var(--transition-fast);
+  font-size: 1rem;
+  resize: none;
+}
+
+/* Focus Effect */
+.messageGroup textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Submit Button */
+.contactForm button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color var(--transition-fast), transform 0.3s;
+}
+
+.contactForm button:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.05);
+}
+
+/* Contact Info Box */
+.contactInfo {
+  background-color: var(--background-color);
+  padding: 2rem;
+  font-family: var(--font-primary);
+  border-radius: 8px;
+}
+
+/* Social Media Links */
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.socialLinks a {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  transition: color var(--transition-fast), transform 0.3s ease;
+}
+
+.socialLinks a:hover {
+  color: var(--primary-color);
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contactContent {
+    grid-template-columns: 1fr;
+  }
+
+  .formGroup input {
+    padding-left: 2.8rem; /* Adjusted padding for smaller screens */
+  }
+
+  .messageGroup textarea {
+    padding-left: 2.8rem;
+  }
+
+  .galleryItem img {
+    height: 250px;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+}
+
+
+.backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.backToTopButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.backToTopButton:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.arrowIcon {
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.backToTopButton:hover .arrowIcon {
+  transform: translateY(-2px);
+}
+
+/* In your Home.module.css */
+.flipIcon {
+  top: 30%; /* Centered vertically for inputs */
+  transform: scaleX(-1);
+  display: inline-block; /* Required for transform to work */
+}
+
+
+.submitButton {
+  display: flex;
+  align-items: center;       
+  justify-content: center;   
+  position: relative; 
+  padding: 0.75rem 1.5rem; 
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.statusMessage {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.statusMessage[data-status="success"] {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.statusMessage[data-status="error"] {
+  background-color: #ffebee;
+  color: #c62828;
+}

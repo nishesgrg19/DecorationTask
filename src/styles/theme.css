@@ -1,0 +1,41 @@
+:root {
+    /* Color Scheme */
+    /* --primary-color: #D2A679; */
+    --primary-color: #2e6997;
+    --secondary-color: #e67e22;
+  --hover-color: #23527a;
+  --background-color: #FAF7F2;
+    --text-color: #333333;
+    --white: #FFFFFF;
+  
+    /* Typography */
+    --font-primary: 'Poppins', serif;
+    --font-secondary: 'Montserrat', sans-serif; 
+    --font-title: 'Playfair Display', serif;
+    
+    /* Spacing */
+    --section-padding: 5rem 0;
+    --container-width: min(1200px, 90%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.15);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+    :root {
+      --section-padding: 3rem 0;
+    }
+  }
+
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+    scroll-behavior: smooth;
+  }
+
+  
